@@ -58,8 +58,8 @@ LiquidCrystal lcd (LCD_RS, LCD_ENABLE, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 int types[] = {BMP180T,BMP180P,DHT22T,DHT22H,DHT22HI,LDR,DS3231};
 unsigned long lastUpdate[] = {0,0,0,0,0,0,0};
-unsigned long updateTimes[] = {30000,30000,30000,30000,30000,30000,30000};
-int pins[] = {NOTUSED, NOTUSED, 2, 2, NOTUSED, 15, NOTUSED};
+unsigned long updateTimes[] = {60000,60000,60000,60000,60000,30000,30000};
+int pins[] = {NOTUSED,NOTUSED,NOTUSED,NOTUSED,NOTUSED,A1,NOTUSED};
 
 int secureAnalogRead(int pin) {
   delay(0.01);
