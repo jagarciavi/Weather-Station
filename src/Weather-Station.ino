@@ -187,7 +187,7 @@ String printDateTime(const RtcDateTime& dt)
 
     snprintf_P(datestring,
             countof(datestring),
-            PSTR("%02u/%02u/%04u_%02u:%02u:%02u "),
+            PSTR("%02u/%02u/%04u_%02u:%02u:%02u"),
             dt.Day(),
             dt.Month(),
             dt.Year(),
