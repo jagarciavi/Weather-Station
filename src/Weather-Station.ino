@@ -235,6 +235,7 @@ void setup() {
   }
 }
 
+// TODO: Add power saver
 void loop() {
   updateAll();
 }
