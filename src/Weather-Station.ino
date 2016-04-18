@@ -58,7 +58,7 @@ LiquidCrystal lcd (LCD_RS, LCD_ENABLE, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 int types[] = {BMP180T,BMP180P,DHT22T,DHT22H,DHT22HI,LDR,DS3231};
 unsigned long lastUpdate[] = {0,0,0,0,0,0,0};
-unsigned long updateTimes[] = {60000,60000,60000,60000,60000,30000,30000};
+unsigned long updateTimes[] = {60000,60000,60000,60000,60000,60000,60000};
 int pins[] = {NOTUSED,NOTUSED,NOTUSED,NOTUSED,NOTUSED,A1,NOTUSED};
 
 int secureAnalogRead(int pin) {
@@ -110,7 +110,8 @@ void sendCommand(String c, String v) {
 #elif CONNECTION_TYPE == 1
 
 void sendCommand(String c, String v) {
-  String data = c + "_" + v;
+  RtcDateTime now = Rtc.GetDateTime();
+  String data = printDateTime(now) + "_" + c + "_" + v;
   const char* datachar = data.c_str();
 
   radio.powerUp();
