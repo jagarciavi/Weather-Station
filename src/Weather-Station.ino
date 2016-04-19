@@ -12,7 +12,6 @@
 
 #define CONNECTION_TYPE 0 // 0 is USB + SD, 1 is NRF24L01 + SD
 #define BAUD 9600
-#define DHT_ENABLE true
 #define DHTPIN 2
 #define DHTTYPE DHT22
 #define SD_CS 4
@@ -234,6 +233,7 @@ void setup() {
   for (int i = 0; i < count(updateTimes); i++) {
     update(types[i],pins[i]);
   }
+  delay(2000);
 }
 
 // TODO: Add power saver
